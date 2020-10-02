@@ -1,0 +1,145 @@
+$height: 200px;
+$color: #ff0000;
+$light: 50%;
+div {
+    height: $height/2;
+}
+
+p {
+    height: height*2;
+}
+
+h1 {
+    height: height - 2;
+}
+
+@media (max-height: 600px) {
+    img {
+        height: $height/2;
+    }
+}
+
+$animal: 'gato';
+div {
+    @if $animal=='gato' {
+        color: blue;
+    }
+    @else if $animal==perro {
+        color: red;
+    }
+    @else {
+        color: black;
+    }
+}
+
+
+/** forma correcta **/
+
+div {
+    color: paleturquoise;
+    @if $animal=="cheetah" {
+        color: blue;
+    }
+}
+
+
+/**
+==
+!=
+**/
+
+@for $i from 1 through 5 {
+    .number-#{$i} {
+        width: 20 - $i;
+    }
+}
+
+
+/** repite desde el 1 al 5 y agrega 1 a cada ancho **/
+
+$Facebook: 'Facebook';
+#redes-#{$Facebook} {
+    color: blue;
+}
+
+$Facebook: blue;
+$twitter: green;
+$instagram: red;
+
+/** EACH **/
+
+$colores: red,
+blue,
+green,
+black;
+@each $valor in $colores {
+    .bg-#{valor} {
+        background-color: $valor;
+    }
+}
+
+body {
+    color: nth($colores, 1)
+}
+
+
+/*** FUNCIONES ***/
+
+#function first {
+    $lista
+}
+
+,
+{
+    #return nth($lista, length, 1);
+}
+
+#function last($lista) {
+    #return nth($lista, length($lista));
+}
+
+
+/*** WHILE ***/
+
+$div: 5;
+$width: 10%;
+@while $divs>0 {
+    .el-#{divs} {
+        width: $divs + $width;
+    }
+    $divs: $divs - 1;
+}
+
+.mi-p {
+    color: red;
+    font-size: 16px;
+}
+
+.mi-p-big {
+    @extend.mi-p;
+    border-width: 3px;
+    font-size: 40px;
+}
+
+
+/** MAPS **/
+
+$redes: ( youtube: red, facebook: blue, instagram: orange);
+@each $clave,
+$valor in $redes {
+    .#{$clave} {
+        background-color: $valor;
+    }
+}
+
+
+/** LISTAS **/
+
+$lista-redes: red,
+blue,
+orange;
+@each $valor in $lista-redes {
+    .mi-#{$valor} {
+        background-color: $valor;
+    }
+}

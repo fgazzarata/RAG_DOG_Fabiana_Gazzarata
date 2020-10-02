@@ -1,0 +1,244 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: $font-family;
+}
+
+.header {
+    font-size: 24px;
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #CCCCCC;
+    margin: 15px 0px;
+    padding: 0;
+    ul {
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: space-between;
+        text-decoration-style: double;
+        font-variant-caps: all-petite-caps;
+        font-weight: bolder;
+        width: 100%;
+        li {
+            margin: auto;
+            vertical-align: middle;
+            img {
+                height: 13vh;
+                animation: bounce 2s;
+                -webkit-animation: bounce 2s;
+            }
+        }
+    }
+}
+
+h1 {
+    font-weight: 400;
+    color: rgb(5, 5, 105);
+    text-align: center;
+    text-shadow: 2px 2px 5px grey;
+    padding: 30px;
+    animation: levitate 2s;
+    -webkit-animation: levitate 2s;
+}
+
+video {
+    height: 60vh;
+    width: auto;
+}
+
+div.container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 74%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+div.content {
+    margin: 10px;
+}
+
+div.content img {
+    width: 300px;
+    transition: width 2s;
+}
+
+div.content img:hover {
+    width: 450px;
+}
+
+.grid.contacto {
+    display: grid;
+    grid-template-areas: "foto2 contacto foto";
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 30px 15px;
+}
+
+div.foto {
+    grid-area: foto;
+    padding: 20px;
+}
+
+div.foto2 {
+    grid-area: foto2;
+    padding: 20px;
+}
+
+.grid.contacto img {
+    height: 500px;
+}
+
+div.contactoS {
+    grid-area: contacto;
+    color: rgb(5, 5, 105);
+    font-size: 14px;
+    padding: 20px;
+}
+
+.grid.inicio {
+    display: grid;
+    grid-template-areas: "videochuchu novedades novedades novedades" "textochuchu novedades novedades novedades";
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 20% 1fr 1fr 1fr;
+    margin: 30px 15px;
+}
+
+@media (max-width:629px) {
+    img#chucha {
+        display: none;
+    }
+}
+
+div.textochuchu {
+    grid-area: textochuchu;
+    margin: auto;
+}
+
+.carousel.item.img {
+    object-fit: contain;
+}
+
+div.videochuchu {
+    grid-area: videochuchu;
+}
+
+div.novedades {
+    grid-area: novedades;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+div.novs {
+    margin: 10px;
+    width: 20%;
+}
+
+.grid.vision {
+    display: grid;
+    grid-template-areas: "foto texto";
+    grid-template-columns: 1fr 3fr;
+    margin: 20px;
+}
+
+div.foto-vision {
+    grid-area: foto;
+    padding: 30px;
+}
+
+div.texto-vision {
+    grid-area: texto;
+    padding: 20px;
+}
+
+table.productos {
+    border: 2px solid #FFFFFF;
+    width: 50%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 100px auto;
+}
+
+table.productos td,
+table.productos th {
+    border: 1px solid #FFFFFF;
+    padding: 8px 9px;
+}
+
+table.productos tbody td {
+    font-size: 18px;
+}
+
+table.productos td:nth-child(even) {
+    background: #EBEBEB;
+}
+
+table.productos thead {
+    background: #FFFFFF;
+    border-bottom: 4px solid #333333;
+}
+
+table.productos thead th {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+}
+
+table.productos thead th:first-child {
+    border-left: none;
+}
+
+.prodTable {
+    height: 150px;
+    transition: height 2s;
+}
+
+.prodTable:hover {
+    height: 300px;
+}
+
+.form {
+    display: block;
+    margin: 20px;
+}
+
+.radio {
+    margin: 20px;
+}
+
+.formline {
+    display: inline-block;
+    margin: 20px;
+}
+
+
+/* redes */
+
+$redes: ( twitter: #55acee, facebook: #3a5795, send-mail: #C25E30);
+@each $red,
+$color in $redes {
+    .btn--#{$red} {
+        background-color: $color;
+        border-radius: 32px;
+        transition-duration: 0.4s;
+        padding: 15px 32px;
+    }
+}
+
+
+/* footer */
+
+footer {
+    color: rgb(5, 5, 105);
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 150px;
+}

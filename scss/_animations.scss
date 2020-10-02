@@ -1,0 +1,27 @@
+@keyframes levitate {
+    0% {
+        transform: translate(-200px, 0px) rotateZ(0.001deg);
+        animation-timing-function: ease-in-out
+    }
+    50% {
+        transform: translate(200px, 0px) rotateZ(0.001deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotateZ(0.001deg);
+        animation-timing-function: ease-in-out
+    }
+}
+
+@-webkit-keyframes levitate {
+    0% {
+        transform: translate(-200px, 0px) rotateZ(0.001deg);
+        animation-timing-function: ease-in-out
+    }
+    50% {
+        transform: translate(200px, 0px) rotateZ(0.001deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotateZ(0.001deg);
+        animation-timing-function: ease-in-out
+    }
+}
